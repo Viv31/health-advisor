@@ -14,8 +14,8 @@ echo"<br>";
 echo $user_password;
 */
 
- $login_chek = "SELECT id,username,user_pwd FROM admin WHERE 
-username = '$username' AND user_pwd = '$user_pwd'";
+ echo $login_chek = "SELECT id,username,user_pwd FROM admin WHERE 
+username = '$username' AND user_pwd = '$user_pwd'"; 
 $res = mysqli_query($conn,$login_chek);
 
 $row = mysqli_fetch_assoc($res);

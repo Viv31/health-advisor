@@ -9,6 +9,7 @@
 <table class="table table-hover">
     <thead>
       <tr>
+         <th>Sno<?php  $sno=1;?></th>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Email</th>
@@ -22,6 +23,7 @@ if(mysqli_num_rows($res)>0){
 	while($rs = mysqli_fetch_assoc($res)){ ?>
 
 <tr>
+        <td><?php echo $sno++; ?></td>
         <td><?php echo $rs['firstname']; ?></td>
         <td><?php echo $rs['lastname']; ?></td>
         <td><?php echo $rs['user_email']; ?></td>

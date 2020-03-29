@@ -1,4 +1,6 @@
-<?php include("inc/header.php"); 
+<?php 
+session_start();
+include("inc/header.php"); 
 if(!isset($_SESSION["Email"])){
     header("location:index.php");
 

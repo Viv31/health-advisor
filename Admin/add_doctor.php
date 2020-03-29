@@ -59,7 +59,7 @@
 </select>
   </div>
   
-  <button type="submit" class="btn btn-default" name="insert">Submit</button>
+  <button type="submit" class="btn btn-primary" name="insert">Submit</button>
 </form>
 
 </div>
@@ -98,8 +98,9 @@ if(mysqli_num_rows($res)>0){
         <td><?php echo $rs['address']; ?></td>
         <td><?php echo $rs['mobile']; ?></td>
         <td><?php echo $rs['disease_name']; ?></td>
-         <td><button class="btn btn-warning">Edit</button></td>
-         <td><button class="btn btn-danger">Delete</button></td>
+         <?php  $doctor_id = $rs['id']; ?>
+         <td><?php echo "<a href='update_doctor.php?id=$doctor_id'><button class='btn btn-warning'>Edit</button></a>"?></td>
+         <td><?php echo "<a href='delete_doctor.php?id=$doctor_id'><button class='btn btn-danger' onclick=' return del();'>Delete</button></a>"?></td>
       </tr>
 
     <?php
@@ -120,3 +121,16 @@ if(mysqli_num_rows($res)>0){
 </div>
 
 <?php include("inc/footer.php"); ?>
+<script>
+  function del(){
+   var y = confirm("Do you Really want to delete this!!!");
+         if(y){
+         return true;
+       }
+           else{
+              return false;
+           }
+              
+    }
+
+</script>
